@@ -33,13 +33,12 @@ class LaneImageRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: LaneImageRecyclerViewHolder, position: Int) {
         Logger.getAnonymousLogger().warning("Setting source to ${imgSources[position]}")
-        val uri = Uri.parse(imgSources[position])
 
         // Get the screen size to set the image's width equal to it
         val screenSize = getScreenSize(context)
 
         holder.laneImageView.layoutParams.width = screenSize.width
-        holder.laneImageView.setImageURI(uri)
+        holder.laneImageView.setImageURI(imgSources[position])
     }
 }
 
